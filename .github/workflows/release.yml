@@ -70,6 +70,6 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
           git commit -m "$RELEASE_MESSAGE"
-          git tag $VERSION
-          git push -u origin $VERSION
-          gh release create --verify-tag -t "$RELEASE_MESSAGE" $VERSION
+          git tag ${VERSION:1}
+          git push -u origin ${VERSION:1}
+          gh release create --verify-tag -t "$RELEASE_MESSAGE" ${VERSION:1}
