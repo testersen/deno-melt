@@ -1,4 +1,4 @@
-import { LoggingOutput } from "../../logging.ts";
+import { LoggingOutput } from "../logging.ts";
 
 const e = new TextEncoder();
 

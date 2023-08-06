@@ -1,4 +1,4 @@
-import { LoggingFormat } from "../../logging.ts";
+import { LoggingFormat } from "../logging.ts";
 
 export const JasonFormat: LoggingFormat = {
   format({ args, context, level, message, name, timestamp }) {
