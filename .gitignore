@@ -1,0 +1,9 @@
+*
+
+!/**/
+
+!/.gitignore
+!/.github/workflows/*.yml
+!/.vscode/*.json
+!/**/*.ts
+!/README.md
