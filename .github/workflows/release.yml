@@ -67,7 +67,7 @@ jobs:
           echo ".github" >> .gitignore
           echo ".vscode" >> .gitignore
           echo ".gitignore" >> .gitignore
-          git rm `git ls-files -i -c --exclude-from=.gitignore`
+          git rm -f `git ls-files -i -c --exclude-from=.gitignore`
           git add .
           git config user.name github-actions
           git config user.email github-actions@github.com
