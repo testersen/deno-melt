@@ -65,12 +65,13 @@ jobs:
           RELEASE_MESSAGE: ${{ inputs.releaseMessage }}
         run: |
           echo ".github" >> .gitignore
+          echo ".vscode" >> .gitignore
           echo ".gitignore" >> .gitignore
-          git rm --cached `git ls-files -i -c --exclude-from=.gitignore`
+          git rm `git ls-files -i -c --exclude-from=.gitignore`
           git add .
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git commit -m "$RELEASE_MESSAGE"
-          git tag VERSION
-          git push -u origin VERSION
-          gh release create --verify-tag -t "$RELEASE_MESSAGE" VERSION
+          git commit -m ${RELEASE_MESSAGE:-"Releasing $VERSION"}
+          git tag $VERSION
+          git push -u origin $VERSION
+          gh release create --verify-tag -t "$RELEASE_MESSAGE" $VERSION
