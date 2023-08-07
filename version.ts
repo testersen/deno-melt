@@ -1,1 +1,2 @@
-export default "UNVERSIONED";
+export default "0.1.1";
+
